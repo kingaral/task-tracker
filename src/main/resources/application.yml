@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/task-tracker-db
+    username: postgres
+    password: postgres
+  flyway:
+    baselineOnMigrate: true
+    enabled: true
+    schemas: public
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    show-sql: false
+    properties:
+      temp:
+        use_jdbc_metadata_defaults: false
+
+
+auth:
+  admin-login: qwerty
+  admin-password: qwerty
