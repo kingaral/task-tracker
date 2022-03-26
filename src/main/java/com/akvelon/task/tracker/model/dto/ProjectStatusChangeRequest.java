@@ -1,7 +1,6 @@
 package com.akvelon.task.tracker.model.dto;
 
 import com.akvelon.task.tracker.model.enums.ProjectStatus;
-import com.akvelon.task.tracker.model.enums.TaskStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;

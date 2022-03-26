@@ -22,15 +22,38 @@ public class Project {
     )
     Long id;
 
+    /**
+     * Name of the project
+     */
     String name;
+
+
+    /**
+     * Start date  of the project
+     */
     Date startDate;
+
+    /**
+     * End date  of the project
+     */
     Date endDate;
 
+
+    /**
+     * Status date  of the project: NotStarted, Active, Completed
+     */
     @Enumerated(EnumType.STRING)
     ProjectStatus status;
+
+    /**
+     * OneToMany relation to see tasks witch connected to this project
+     */
 
     @OneToMany(mappedBy = "project", fetch = FetchType.EAGER)
     Set<Task> tasks;
 
+    /**
+     * Priority of this project
+     */
     Integer priority;
 }

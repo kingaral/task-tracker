@@ -9,6 +9,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
+/**
+ * Configuration for Spring Specification and adding support swagger
+ */
 @EnableWebMvc
 @Configuration
 public class SecurityConfig implements WebMvcConfigurer {

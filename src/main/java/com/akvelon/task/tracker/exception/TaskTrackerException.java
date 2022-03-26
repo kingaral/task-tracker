@@ -3,6 +3,9 @@ package com.akvelon.task.tracker.exception;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
+/**
+ * Custom exception
+ */
 @Getter
 public class TaskTrackerException extends RuntimeException {
 

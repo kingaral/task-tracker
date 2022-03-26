@@ -20,15 +20,30 @@ public class Task {
     )
     Long id;
 
+    /**
+     * Name of this task
+     */
     String name;
 
+    /**
+     * Status of the task
+     */
     @Enumerated(EnumType.STRING)
     TaskStatus status;
 
+    /**
+     * Full description of this task
+     */
     String description;
 
+    /**
+     * Priority of this task
+     */
     Integer priority;
 
+    /**
+     * Relation with priority
+     */
     @ManyToOne
     Project project;
 }
