@@ -105,6 +105,7 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
+    @Transactional
     public void changeProjectStatusByIds(ProjectStatusChangeRequest statusChangeRequest) {
         projectRepository.updateTaskStatusByIds(statusChangeRequest.getProjectIds(), statusChangeRequest.getStatus());
     }
