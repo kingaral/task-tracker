@@ -9,7 +9,7 @@ create table project
     priority   int                      not null
 );
 alter table project
-    add constraint project_name_id_unique unique (name, id);
+    add constraint project_name_id_unique unique (name);
 
 -- create table task
 create table task
