@@ -13,12 +13,7 @@ import javax.persistence.*;
 @Setter
 @Table(name = "task")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Task {
-    @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
-    Long id;
+public class Task extends AbstractEntity {
 
     /**
      * Name of this task

@@ -15,12 +15,7 @@ import java.util.Set;
 @Setter
 @Table(name = "project")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Project {
-    @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
-    Long id;
+public class Project extends AbstractEntity{
 
     /**
      * Name of the project
