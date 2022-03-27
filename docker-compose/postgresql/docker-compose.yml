@@ -6,17 +6,20 @@ services:
     - ./postgresql_data:/var/lib/postgresql/data
     command: postgres -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all -c max_connections=200
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
       - 5432:5432
-  pgadmin:
-    image: dpage/pgadmin4
+  akvelon:
+    image: akvelon
     volumes:
-    - ./pgadmin_data:/var/lib/pgadmin
+      - ./pgadmin_data:/var/lib/pgadmin
     depends_on:
-      - postgresql
+       - postgresql
     environment:
-      PGADMIN_DEFAULT_EMAIL: user@domain.com
-      PGADMIN_DEFAULT_PASSWORD: SuperSecret
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     ports:
-      - 5050:80
+      - 8080:8080
